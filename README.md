@@ -52,7 +52,7 @@ The decoder provides comprehensive parsing of ECH structures:
 
 1. Enter a domain name (e.g., `cloudflare-ech.com`)
 2. Select DNS provider (Google or Cloudflare)
-3. Click "Fetch ECH from DNS" to query and decode
+3. Click "Fetch from DNS" to query and decode
 
 ## Privacy
 
