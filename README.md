@@ -17,7 +17,7 @@ A web-based tool for decoding and parsing Encrypted Client Hello (ECH) configura
 - **Binary Files**: Upload `.ech`, `.pem`, `.bin`, or other binary formats
 - **Multiple Configurations**: Automatic detection and parsing of multiple ECH configs separated by blank lines
 
-### DNS Integration
+### DNS API Integration
 
 Query live domains for ECH configurations via DNS HTTPS resource records:
 
