@@ -57,7 +57,7 @@ The decoder provides comprehensive parsing of ECH structures:
 ## Privacy
 
 All processing occurs client-side in your browser:
-- No data is sent to any server except DNS queries
+- No data is sent to any server except DNS API queries (optional)
 - DNS API queries are sent to the selected provider (Google or Cloudflare)
 - No tracking or analytics
 
