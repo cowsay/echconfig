@@ -21,8 +21,8 @@ A web-based tool for decoding and parsing Encrypted Client Hello (ECH) configura
 
 Query live domains for ECH configurations via DNS HTTPS resource records:
 
-- **Google DNS API**: Query using Google's public DNS-over-HTTPS service
-- **Cloudflare DNS API**: Query using Cloudflare's DNS-over-HTTPS service
+- **Google DNS API**: Query using Google's public dns-query JSON API (`dns.google`)
+- **Cloudflare DNS API**: Query using Cloudflare's public dns-query JSON API (`cloudflare-dns.com`)
 - **Wire Format Parsing**: Automatic parsing of both text and wire format responses
 - **Service/Port-Prefixed Records**: Support for records like `_3443._https.domain.com` ([rfc9460#name-svcb-query-names](https://datatracker.ietf.org/doc/html/rfc9460#name-svcb-query-names))
 - **Multiple Records**: Display and decode all ECH configurations from multiple HTTPS records
