@@ -1,6 +1,10 @@
-# ECHConfig / ECHConfigList Decoder
+# ECHConfig Decoder
 
 A web-based tool for decoding and parsing Encrypted Client Hello (ECH) configurations as specified in the [draft-ietf-tls-esni](https://datatracker.ietf.org/doc/html/draft-ietf-tls-esni). This application supports multiple input formats and provides detailed parsing of ECHConfig and ECHConfigList structures.
+
+## Live Demo
+
+[https://cowsay.github.io/echconfig/](https://cowsay.github.io/echconfig/)
 
 ## Features
 
