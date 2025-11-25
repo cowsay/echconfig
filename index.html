@@ -3,17 +3,20 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
     <title>ECHConfig Decoder - Parse and Decode Encrypted Client Hello Configurations</title>
     <meta name="description" content="A web-based tool for decoding and parsing ECHConfig and ECHConfigList structures from Base64, hex, PEM, DNS HTTPS records, or binary files. Supports multiple formats and DNS providers." />
     <meta name="keywords" content="ECH, Encrypted Client Hello, ECHConfig, ECHConfigList, TLS, HTTPS, DNS, decoder, parser, cryptography, privacy" />
     <meta name="author" content="ECH Decoder" />
-    
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://dns.google https://cloudflare-dns.com; img-src 'self';" />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="ECHConfig Decoder" />
     <meta property="og:description" content="Parse and decode Encrypted Client Hello configurations from multiple formats including DNS HTTPS records." />
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="ECHConfig Decoder" />
