@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <title>ECHConfig Decoder - Parse and Decode Encrypted Client Hello Configurations</title>
+    <meta name="description" content="A web-based tool for decoding and parsing ECHConfig and ECHConfigList structures from Base64, hex, PEM, DNS HTTPS records, or binary files. Supports multiple formats and DNS providers." />
+    <meta name="keywords" content="ECH, Encrypted Client Hello, ECHConfig, ECHConfigList, TLS, HTTPS, DNS, decoder, parser, cryptography, privacy" />
+    <meta name="author" content="ECH Decoder" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ECHConfig Decoder" />
+    <meta property="og:description" content="Parse and decode Encrypted Client Hello configurations from multiple formats including DNS HTTPS records." />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="ECHConfig Decoder" />
+    <meta name="twitter:description" content="Parse and decode Encrypted Client Hello configurations from multiple formats including DNS HTTPS records." />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>ECHConfig Decoder</h1>
+    <p class="small">
+        Decode <b>ECHConfig</b> or <b>ECHConfigList</b> from Base64, hex, PEM, binary file, 
+        or directly from a live domain.
+    </p>
+
+    <!-- Manual Input Section -->
+    <div class="box">
+        <div class="section-title">Input (Base64 / Hex / ECH PEM)</div>
+        <textarea 
+            id="inputArea" 
+            placeholder="Paste Base64, hex, ECH PEM, DNS HTTPS record, or paste a file"
+            aria-label="ECH configuration input"
+            spellcheck="false"
+            autocomplete="off"
+        ></textarea>
+
+        <div class="controls">
+            <button id="decodeBtn" class="primary">Decode</button>
+            <button id="clearBtn" class="secondary">Clear All</button>
+            <label class="file-label">
+                <input type="file" id="fileInput" accept=".ech,.pem,.bin,.txt" aria-label="Upload ECH configuration file" />
+                Upload File
+            </label>
+        </div>
+        <div id="manualStatus" class="status-message" aria-label="Manual input status"></div>
+    </div>
+
+    <!-- DNS Fetch Section -->
+    <div class="box">
+        <div class="section-title">Fetch ECHConfigList from DNS (HTTPS Resource Record)</div>
+        <div class="dns-fetch-controls">
+            <input 
+                type="text" 
+                id="domainInput" 
+                placeholder="example.com or https://example.com" 
+                aria-label="Domain name"
+                spellcheck="false"
+                autocomplete="off"
+            />
+            <button id="fetchBtn" class="primary">Fetch from DNS</button>
+            <div class="dns-provider-select">
+                <label class="radio-label">
+                    <input type="radio" name="dnsProvider" value="google" checked />
+                    Google
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="dnsProvider" value="cloudflare" />
+                    Cloudflare
+                </label>
+            </div>
+        </div>
+        <div id="dnsStatus" class="status-message" aria-label="DNS query status"></div>
+    </div>
+
+    <!-- Raw Hex Display -->
+    <div class="box">
+        <div id="inputType" class="input-type-label"></div>
+        <div class="section-title">Raw bytes (hex)</div>
+        <div id="rawHex" class="raw-hex-display" aria-label="Hexadecimal representation of ECH configuration"></div>
+    </div>
+
+    <!-- Parsed Output -->
+    <div class="box">
+        <div class="section-title">Parsed output</div>
+        <div id="output" class="output-display" aria-label="Parsed ECH configuration details">
+            Press Decode, upload a file, or fetch from DNS to see results.
+        </div>
+    </div>
+
+    <footer class="github-footer">
+        <a href="https://github.com/cowsay/echconfig" target="_blank" rel="noopener noreferrer" class="github-badge">
+            <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+            </svg>
+            View on GitHub
+        </a>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
